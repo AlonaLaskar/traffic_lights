@@ -35,7 +35,7 @@ A simple Flutter application demonstrating a **traffic light** simulation. This 
 ## Project Structure
 
 lib/
-├─ main.dart                 # Application entry point
+├─ main.dart                   # Application entry point
 ├─ traffic_light_control.dart  # State management (provider + traffic light states)
 └─ traffic_light_widget.dart   # The TrafficLight widget and its internal state
 
@@ -63,7 +63,7 @@ lib/
 1. **Clone** or **download** this repository:
    ```bash
    git clone https://github.com/AlonaLaskar/traffic_lights.git 
-   cd traffic-light
+   cd traffic_light
    ```
 
 2. **Install Dependencies**:
