@@ -2,6 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'traffic_light_control.dart';
+import 'traffic_light_modes.dart';
+
 
 class TrafficLight extends StatefulWidget {
   const TrafficLight({super.key});
