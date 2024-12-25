@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Holds the different states of the traffic light
-/// along with their respective durations and colors.
+/// Defines the various states of a traffic light, each associated with specific light colors and durations.
+/// This allows for controlled transitions between states in the traffic light simulation.
+
 
 enum TrafficLightState {
   stop(Colors.red, Colors.grey, Colors.grey, duration: 3500),

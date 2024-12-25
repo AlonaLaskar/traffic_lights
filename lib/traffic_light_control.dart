@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'traffic_light_modes.dart';
 
 

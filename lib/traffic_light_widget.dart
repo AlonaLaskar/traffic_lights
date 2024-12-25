@@ -19,7 +19,7 @@ class _TrafficLightState extends State<TrafficLight> {
   @override
   void initState() {
     super.initState();
-    // Grab initial sync state from the provider without listening for changes.
+  // Retrieve the initial synchronization state from the provider. This is done without setting up a listener to avoid unnecessary updates.
     _currentState = TrafficLightState.stop;//start with red light
     _isSynchronized =
         Provider.of<TrafficLightProvider>(context, listen: false).isSynchronized;
