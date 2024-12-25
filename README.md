@@ -3,7 +3,8 @@
 
 # Traffic Light 
 
-A simple Flutter application demonstrating a **traffic light** simulation. This project uses [Provider](https://pub.dev/packages/provider) for state management to toggle between synchronized (all lights change together) and unsynchronized (each light cycles randomly on its own).
+A simple Flutter application demonstrating a **traffic light** simulation. This project uses 
+[Provider](https://pub.dev/packages/provider) for state management to toggle between synchronized (all lights change together) and unsynchronized (each light cycles randomly on its own).
 
 ---
 
@@ -20,7 +21,6 @@ A simple Flutter application demonstrating a **traffic light** simulation. This 
   - [TrafficLightProvider](#trafficlightprovider)
   - [TrafficLight](#trafficlight-widget)
 
-
 ---
 
 ## Features
@@ -31,22 +31,13 @@ A simple Flutter application demonstrating a **traffic light** simulation. This 
    - *Unsynchronized*: Each traffic light runs on its own independent timer, with a random initial delay.
 3. **Provider Integration**: State management for enabling or disabling synchronization globally.
 
-
 ## Project Structure
 
-lib/
-├─ main.dart                   # Application entry point
-├─ traffic_light_control.dart  # State management (provider + traffic light states)
-└─ traffic_light_widget.dart   # The TrafficLight widget and its internal state
-
-
-- **main.dart**: Contains the main() function and the TrafficLightApp widget that sets up the app layout.
-- **traffic_light_control.dart**:  
-  - **TrafficLightState (enum)**: Defines the traffic light states and durations.  
-  - **TrafficLightProvider**: Manages whether all lights are synchronized and what the current “global” state is.
-- **traffic_light_widget.dart**:  
-  - **TrafficLight** widget: Displays a single traffic light.  
-  - Manages local state if not synchronized with the global provider.
+- **main.dart**: Entry point of the application, setting up the ChangeNotifierProvider and TrafficLightScreen widget.
+- **traffic_light_modes.dart**: Defines the `TrafficLightState` enum, describing the different states of the traffic lights along with their durations and colors.
+- **traffic_light_control.dart**: Includes the `TrafficLightProvider` class for managing the synchronization and state transitions of traffic lights.
+- **traffic_light_widget.dart**: Implements the `TrafficLight` widget that visually represents the traffic light and manages its state based on synchronization.
+- **traffic_light_screen.dart**: Sets up the main screen layout and AppBar, incorporating the TrafficLight widget in a grid layout.
 
 ---
 
@@ -87,33 +78,16 @@ If everything is set up properly, the traffic light grid should appear, and you 
 
 ### TrafficLightState
 
-An enum that represents the different states a traffic light can have:
-```dart
-enum TrafficLightState {
-  stop(Colors.red, Colors.grey, Colors.grey, duration: 3500),
-  ready(Colors.red, Colors.yellow, Colors.grey, duration: 1500),
-  go(Colors.grey, Colors.grey, Colors.green, duration: 3000),
-  caution(Colors.grey, Colors.yellow, Colors.grey, duration: 1500);
-  // ...
-}
-```
-Each state includes the *colors* for the red, yellow, and green lights, as well as a *duration* in milliseconds.
+An enum that represents the different states a traffic light can have, each with specific colors and durations.
 
 ### TrafficLightProvider
 
-A `ChangeNotifier` that manages:
-1. Whether traffic lights are synchronized (`_isSynchronized`).
-2. The global `TrafficLightState` (`_currentState`).
-
-When synchronized, all lights follow the same state transitions. When unsynchronized, each traffic light runs independently.
+A `ChangeNotifier` that manages whether traffic lights are synchronized and what the current “global” state is.
 
 ### TrafficLight Widget
 
-A stateful widget that:
-- Checks if the light is synchronized.
-- Cycles through states independently if not synchronized.
-- If synchronization is enabled, uses the provider’s global state.
+A stateful widget that checks synchronization status, independently cycles through states if unsynchronized, or uses the global state if synchronized.
 
+---
 
-
-Happy Coding! If you find this project useful or interesting, consider giving it a ⭐ on GitHub
+⭐⭐⭐⭐⭐
