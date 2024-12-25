@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Holds the different states of the traffic light
 /// along with their respective durations and colors.
+
 enum TrafficLightState {
   stop(Colors.red, Colors.grey, Colors.grey, duration: 3500),
   ready(Colors.red, Colors.yellow, Colors.grey, duration: 1500),
